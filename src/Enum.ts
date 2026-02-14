@@ -11,11 +11,11 @@ export enum STONE_ENUM {
 
     BLACK_ASCEND,
     WHITE_ASCEND,
-}
+};
 
 
 export enum PLANT_ENUM {
     NONE,
     ONE,
     TWO,
-}
+};

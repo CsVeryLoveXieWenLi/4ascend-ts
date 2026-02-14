@@ -51,4 +51,4 @@ class Pos {
 }
 
 
-export { Pos }
+export { Pos };

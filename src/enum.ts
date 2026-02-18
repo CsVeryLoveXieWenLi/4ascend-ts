@@ -19,3 +19,9 @@ export enum PLANT_ENUM {
     ONE,
     TWO,
 };
+
+
+export enum PLAYER_ENUM {
+    BLACK,
+    WHITE,
+};

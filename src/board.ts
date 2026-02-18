@@ -3,6 +3,7 @@
  * @Description: 棋盘
  * @Copyright (c) 2026 by CsVeryLoveXieWenLi, All Rights Reserved.
  */
+import { PLANT_ENUM, STONE_ENUM } from './enum';
 import { Pos } from './pos';
 
 
@@ -17,7 +18,10 @@ class Board {
         this.w = w;
         this.h = h;
 
-        this.data = [];
+        this.data = Array.from({ 'length': 5 }, (_, index) => {
+            const [x, y] = this.index2xy(index);
+            return new Pos(x, y, STONE_ENUM.NONE, PLANT_ENUM.NONE);
+        });
     };
 
 

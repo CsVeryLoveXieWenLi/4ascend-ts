@@ -8,7 +8,7 @@ import { PLAYER_ENUM } from './enum';
 
 class State {
     public turn_count: number = 0;
-    public player: PLAYER_ENUM = PLAYER_ENUM.BLACK;
+    public turn_player: PLAYER_ENUM = PLAYER_ENUM.BLACK;
 }
 
 

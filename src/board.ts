@@ -3,8 +3,9 @@
  * @Description: 棋盘
  * @Copyright (c) 2026 by CsVeryLoveXieWenLi, All Rights Reserved.
  */
-import { PLANT_ENUM, STONE_ENUM } from './enum';
 import { Pos } from './pos';
+
+import { PLANT_ENUM, STONE_ENUM } from './enum';
 
 
 class Board {

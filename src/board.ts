@@ -34,6 +34,34 @@ class Board {
     public xy2index(x: number, y: number): number {
         return y * this.w + x;
     };
+
+
+    public set_stone(x: number, y: number, stone: STONE_ENUM): void {
+        this.data[this.xy2index(x, y)]!.stone = stone;
+    };
+
+    public get_stone(x: number, y: number): STONE_ENUM {
+        return this.data[this.xy2index(x, y)]!.stone;
+    };
+
+
+    public set_plant(x: number, y: number, plant: PLANT_ENUM): void {
+        this.data[this.xy2index(x, y)]!.plant = plant;
+    };
+
+    public get_plant(x: number, y: number): PLANT_ENUM {
+        return this.data[this.xy2index(x, y)]!.plant;
+    };
+
+
+    public set_pos(x: number, y: number, stone: STONE_ENUM, plant: PLANT_ENUM): void {
+        this.data[this.xy2index(x, y)]!.stone = stone;
+        this.data[this.xy2index(x, y)]!.plant = plant;
+    };
+
+    public get_pos(x: number, y: number): Pos {
+        return this.data[this.xy2index(x, y)]!;
+    };
 }
 
 

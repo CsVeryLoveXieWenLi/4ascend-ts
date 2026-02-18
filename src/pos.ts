@@ -23,11 +23,11 @@ class Pos {
     };
 
 
-    eqxy_p(p: Pos): boolean {
+    public eqxy_p(p: Pos): boolean {
         return p.x === this.x && p.y === this.y;
     };
 
-    eqxy_xy(x: number, y: number): boolean {
+    public eqxy_xy(x: number, y: number): boolean {
         return x === this.x && y === this.y;
     };
 }

@@ -93,6 +93,12 @@ class Board {
 
         return result;
     };
+
+
+    // 是否在范围内
+    public in_bounds(x: number, y: number): boolean {
+        return x >= 0 && y >= 0 && x < this.w && y < this.h; // 下标不超过
+    };
 }
 
 

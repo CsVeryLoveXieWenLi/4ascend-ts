@@ -11,6 +11,8 @@ class State {
     public turn_player: PLAYER_ENUM = PLAYER_ENUM.BLACK;
 
     public turn_atk: boolean = false;
+
+    public hp: [number, number] = [6, 6];
 }
 
 

@@ -94,6 +94,69 @@ class Board {
         return result;
     };
 
+    // 获取 max_align max_align_total || 最大 总和
+    public get_align(x: number, y: number, stone: STONE_ENUM): [number, number] {
+        const directions: [number, number][] = [
+            [0, -1],  // 上
+            [0, 1],   // 下
+
+            [-1, 0],  // 左
+            [1, 0],   // 右
+
+            [-1, -1], // 左上
+            [1, -1],  // 右上
+
+            [-1, 1],  // 左下
+            [1, 1],   // 右下
+        ];
+
+
+        const result: number[] = [];
+        for (const [dx, dy] of directions) {
+            // 必须连续，不允许断开或者敌方棋子
+            // 中心默认计数1，就算非我方棋子也计数
+            let c = 1;
+
+            let sx = x;
+            let sy = y;
+
+            sx += dx;
+            sy += dy;
+
+            while (this.in_bounds(sx, sy)) {
+                if (this.get_stone(sx, sy) !== stone) break;
+
+                c++;
+                sx += dx;
+                sy += dy;
+            };
+
+            result.push(c);
+        };
+
+
+        // 以两组，计算连线
+        const line: number[] = [];
+        for (let index = 0; index < 8; index += 2) {
+            const a = result[index]! - 1;
+            const b = result[index + 1]! - 1;
+
+            line.push(a + b + 1); // 中心+1
+        };
+
+
+        // 取最大连线长度
+        const max_align = Math.max(...line);
+
+
+        // 计算所有方向总连续长度
+        let max_align_total = -7; // 八方向，默认-8，但中心+1
+        result.forEach((c) => max_align_total += c);
+
+
+        return [max_align, max_align_total];
+    };
+
 
     // 是否在范围内
     public in_bounds(x: number, y: number): boolean {

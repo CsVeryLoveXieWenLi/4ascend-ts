@@ -10,7 +10,7 @@ class State {
     public turn_count: number = 0;
     public turn_player: PLAYER_ENUM = PLAYER_ENUM.BLACK;
 
-    public turn_atk: boolean;
+    public turn_atk: boolean = false;
 }
 
 

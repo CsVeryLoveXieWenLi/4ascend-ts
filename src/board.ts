@@ -86,9 +86,9 @@ class Board {
         directions.forEach(([dx, dy]) => {
             const sx = x + dx;
             const sy = y + dy;
-            const p = this.data[this.xy2index(sx, sy)]!;
+            const p = this.data[this.xy2index(sx, sy)];
 
-            result.push(p);
+            if (p) result.push(p);
         });
 
         return result;

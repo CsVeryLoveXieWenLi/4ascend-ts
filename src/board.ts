@@ -63,6 +63,36 @@ class Board {
     public get_pos(x: number, y: number): Pos {
         return this.data[this.xy2index(x, y)]!;
     };
+
+
+    // 获取自身旁边八个方向的所有点
+    public get_directions(x: number, y: number): Pos[] {
+        const directions: [number, number][] = [
+            [0, -1],  // 上
+            [0, 1],   // 下
+
+            [-1, 0],  // 左
+            [1, 0],   // 右
+
+            [-1, -1], // 左上
+            [1, -1],  // 右上
+
+            [-1, 1],  // 左下
+            [1, 1],   // 右下
+        ];
+
+        const result: Pos[] = [];
+
+        directions.forEach(([dx, dy]) => {
+            const sx = x + dx;
+            const sy = y + dy;
+            const p = this.data[this.xy2index(sx, sy)]!;
+
+            result.push(p);
+        });
+
+        return result;
+    };
 }
 
 

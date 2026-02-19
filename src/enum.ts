@@ -25,3 +25,10 @@ export enum PLAYER_ENUM {
     BLACK,
     WHITE,
 };
+
+
+export enum OVER_ENUM {
+    NONE,
+    ENABLE,
+    EXECUTE,
+};
